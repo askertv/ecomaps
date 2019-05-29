@@ -1,0 +1,78 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.2.1
+-- http://www.phpmyadmin.net
+--
+-- Хост: db3.ho.com.ua
+-- Время создания: Фев 05 2008 г., 09:47
+-- Версия сервера: 5.0.45
+-- Версия PHP: 5.2.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- База данных: `elbrus`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `eco_maps`
+--
+
+CREATE TABLE IF NOT EXISTS `eco_maps` (
+  `id` int(10) NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL,
+  `region_id` int(4) NOT NULL,
+  `komment` varchar(255) NOT NULL,
+  `icon_name` varchar(40) NOT NULL default 'ecomaps/eco_map_icons/empty.jpg',
+  `file_icon` varchar(255) NOT NULL default 'empty.jpg',
+  `image_name` varchar(40) NOT NULL default 'ecomaps/eco_map_images/empty.jpg',
+  `file_image` varchar(255) NOT NULL default 'empty.jpg',
+  `loaddate` datetime NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 AUTO_INCREMENT=95 ;
+
+--
+-- Дамп данных таблицы `eco_maps`
+--
+
+INSERT INTO `eco_maps` (`id`, `name`, `region_id`, `komment`, `icon_name`, `file_icon`, `image_name`, `file_image`, `loaddate`) VALUES
+(72, 'Содержание угарного газа в атмосфере земного шара.', 16, 'Снимок сделан со спутника.', 'ecomaps/eco_map_icons/47989add8f38e.jpg', 'empty.jpg', 'ecomaps/eco_map_images/47989af578dfe.jpg', 'empty.jpg', '2008-01-25 15:01:11'),
+(91, '', 0, '', 'ecomaps/eco_map_icons/4799f82ee34dd.jpg', 'empty.jpg', 'ecomaps/eco_map_images/4799f82eef644.jpg', 'empty.jpg', '2008-01-25 16:54:39'),
+(92, 'Степень экологического загрязнения по округам', 20, '', 'ecomaps/eco_map_icons/4799f8a2395e9.jpg', 'empty.jpg', 'ecomaps/eco_map_images/4799f8a249b8d.jpg', 'empty.jpg', '2008-01-25 16:56:34'),
+(75, 'Ключевые проблемы окружающей среды', 17, 'Карта на английском языке', 'ecomaps/eco_map_icons/4798b3e0ad006.jpg', 'ecomaps/eco_map_icons/empty.jpg', 'ecomaps/eco_map_images/4798b3e0ad7a9.jpg', 'ecomaps/eco_map_images/empty.jpg', '2008-01-24 17:50:56'),
+(76, 'Состояние окружающей среды', 17, '', 'ecomaps/eco_map_icons/4798b4043632c.jpg', 'ecomaps/eco_map_icons/empty.jpg', 'ecomaps/eco_map_images/4798b40436add.jpg', 'ecomaps/eco_map_images/empty.jpg', '2008-01-24 17:51:32'),
+(77, 'Карта воздействий карстово-суффозионных процессов на населенные пункты и хозяйственные объекты на территории РФ в 2005 г.', 17, '', 'ecomaps/eco_map_icons/4798b43275cf4.jpg', 'ecomaps/eco_map_icons/empty.jpg', 'ecomaps/eco_map_images/4798b432764b7.jpg', 'ecomaps/eco_map_images/empty.jpg', '2008-01-24 17:54:00'),
+(93, 'Карта сводной токсичности всех выбросов г. Москвы', 20, '', 'ecomaps/eco_map_icons/4799f90463eee.jpg', 'empty.jpg', 'ecomaps/eco_map_images/4799f904646b3.jpg', 'empty.jpg', '2008-01-25 16:58:12'),
+(80, 'ssds', 0, 'dsdsd', 'ecomaps/eco_map_icons/4798b2fc901e9.jpg', 'empty.jpg', 'ecomaps/eco_map_images/4798b2fc90992.jpg', 'empty.jpg', '2008-01-24 17:47:08'),
+(90, 'Экологическая карта', 20, '', 'ecomaps/eco_map_icons/4799f7287dffb.jpg', 'empty.jpg', 'ecomaps/eco_map_images/4799f72880ce3.jpg', 'empty.jpg', '2008-01-25 16:50:16'),
+(83, 'Выброс в атмосферу окиси углерода', 18, '', 'ecomaps/eco_map_icons/4799f3ece6b02.jpg', 'empty.jpg', 'ecomaps/eco_map_images/4799f3ece72af.jpg', 'empty.jpg', '2008-01-25 16:36:28'),
+(84, 'Выброс в атмосферу оксида азота', 18, '', 'ecomaps/eco_map_icons/4799f426d9627.jpg', 'empty.jpg', 'ecomaps/eco_map_images/4799f426d9deb.jpg', 'empty.jpg', '2008-01-25 16:37:26'),
+(86, 'Выброс в атмосферу сернистого ангидрида', 18, '', 'ecomaps/eco_map_icons/4799f4f87ac92.jpg', 'empty.jpg', 'ecomaps/eco_map_images/4799f4f87b833.jpg', 'empty.jpg', '2008-01-25 16:40:56'),
+(87, 'Срос сточных вод', 18, '', 'ecomaps/eco_map_icons/4799f5474b424.jpg', 'empty.jpg', 'ecomaps/eco_map_images/4799f5474bbe8.jpg', 'empty.jpg', '2008-01-25 16:42:15'),
+(88, 'Эколого-геохимическая карта', 18, '', 'ecomaps/eco_map_icons/4799f5b75ad2b.jpg', 'empty.jpg', 'ecomaps/eco_map_images/4799f5b75b4ec.jpg', 'empty.jpg', '2008-01-25 16:44:07'),
+(89, 'Структура земельного фонда', 18, '', 'ecomaps/eco_map_icons/4799f5f5356df.jpg', 'empty.jpg', 'ecomaps/eco_map_images/4799f5f535e9b.jpg', 'empty.jpg', '2008-01-25 16:45:09'),
+(94, 'Карта шумового воздействия', 20, '', 'ecomaps/eco_map_icons/4799f96cc560e.jpg', 'empty.jpg', 'ecomaps/eco_map_images/4799f96cc5dbe.jpg', 'empty.jpg', '2008-01-25 16:59:56');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `eco_zones`
+--
+
+CREATE TABLE IF NOT EXISTS `eco_zones` (
+  `region_id` int(4) NOT NULL auto_increment,
+  `region` varchar(40) NOT NULL,
+  `loaddate` datetime NOT NULL,
+  PRIMARY KEY  (`region_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=cp1251 AUTO_INCREMENT=21 ;
+
+--
+-- Дамп данных таблицы `eco_zones`
+--
+
+INSERT INTO `eco_zones` (`region_id`, `region`, `loaddate`) VALUES
+(20, 'Москва', '2008-01-25 16:48:36'),
+(16, 'Земной шар', '2008-01-23 09:34:14'),
+(17, 'Российская Федерация', '2008-01-23 09:34:21'),
+(18, 'Московская область', '2008-01-23 09:34:30');

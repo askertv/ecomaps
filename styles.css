@@ -1,0 +1,10 @@
+BODY { background: white; color: black}
+
+A:link { color: #99CCFF }
+A:visited { color: #660099 }
+A:active { color: #00FF33 }
+A:hover { color: #0066FF }
+
+TABLE { border-width: 1px; border-color: #0000FF; border-style: solid; border-collapse: collapse }
+
+TD { border-width: 1px; border-spacing: 0; border-color: #0000FF; border-style: solid }
