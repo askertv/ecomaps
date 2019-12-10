@@ -1,17 +1,17 @@
 <HTML>
 <HEAD>
-<TITLE>Удаление информации записи</TITLE>
+<TITLE>РЈРґР°Р»РµРЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё Р·Р°РїРёСЃРё</TITLE>
 <LINK rel = 'stylesheet' type = 'text/css' href= 'styles.css'>
 </HEAD>
 <BODY>
 <BR /><BR /><BR /><BR />
 
-<H2>Удаление информации</H2>
+<H2>РЈРґР°Р»РµРЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё</H2>
 
-Подтверждение удаления информации текущей записи:&nbsp;<A href = 'eco_action_del_info.php?id=<?php echo $_GET['field_id']; ?>' title = 'Удалить'>Удалить</A>
+РџРѕРґС‚РІРµСЂР¶РґРµРЅРёРµ СѓРґР°Р»РµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё С‚РµРєСѓС‰РµР№ Р·Р°РїРёСЃРё:&nbsp;<A href = 'eco_action_del_info.php?id=<?php echo $_GET['field_id']; ?>' title = 'РЈРґР°Р»РёС‚СЊ'>РЈРґР°Р»РёС‚СЊ</A>
 
 <BR /><BR />
-<FONT size="-1"><A href='eco_choice_region_sett.php'>Вернуться к списку регионов</A></FONT>
+<FONT size="-1"><A href='eco_choice_region_sett.php'>Р’РµСЂРЅСѓС‚СЊСЃСЏ Рє СЃРїРёСЃРєСѓ СЂРµРіРёРѕРЅРѕРІ</A></FONT>
 
 </BODY>
 </HTML>

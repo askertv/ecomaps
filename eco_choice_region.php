@@ -3,7 +3,7 @@
 require 'eco_sett/ii.php';
 $regions='';
 $content='';
-$title='Выбор региона для отображения экологической карты';
+$title='Р’С‹Р±РѕСЂ СЂРµРіРёРѕРЅР° РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЌРєРѕР»РѕРіРёС‡РµСЃРєРѕР№ РєР°СЂС‚С‹';
 
 $query="SELECT region, region_id FROM $datatable2 ORDER BY region";
 
@@ -20,9 +20,9 @@ for($i=0; $i<count($res); $i++) {
 }
 
 $content="<html><head><title>".$title."</title><LINK rel = 'stylesheet' type = 'text/css' href= 'styles.css'></head><body><BR /><BR /><BR /><BR />";
-$content.="<table border='1' width='600'><tr><td><b>Выберите регион:</b></td></tr><tr><td>";
+$content.="<table border='1' width='600'><tr><td><b>Р’С‹Р±РµСЂРёС‚Рµ СЂРµРіРёРѕРЅ:</b></td></tr><tr><td>";
 $content.=$regions;
-$content.="</td></tr></table><BR /><BR /><FONT size='-1'><A href='index.php'>Вернуться на главную страницу</A></FONT></body></html>";
+$content.="</td></tr></table><BR /><BR /><FONT size='-1'><A href='index.php'>Р’РµСЂРЅСѓС‚СЊСЃСЏ РЅР° РіР»Р°РІРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ</A></FONT></body></html>";
 
 echo $content;
 

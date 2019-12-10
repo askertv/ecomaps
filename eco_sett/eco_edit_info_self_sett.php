@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-<TITLE>Изменение информации записи</TITLE>
+<TITLE>РР·РјРµРЅРµРЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё Р·Р°РїРёСЃРё</TITLE>
 <LINK rel = 'stylesheet' type = 'text/css' href= 'styles_edit.css'>
 </HEAD>
 <BODY>
@@ -12,7 +12,7 @@ require_once 'ii.php';
 
 require_once 'func.php';
 
-//В самом начале, выбор исходных данных из полей текущей записи...
+//Р’ СЃР°РјРѕРј РЅР°С‡Р°Р»Рµ, РІС‹Р±РѕСЂ РёСЃС…РѕРґРЅС‹С… РґР°РЅРЅС‹С… РёР· РїРѕР»РµР№ С‚РµРєСѓС‰РµР№ Р·Р°РїРёСЃРё...
 
 if (isset($_GET['field_id'])) {
 
@@ -34,61 +34,61 @@ if (isset($_GET['field_id'])) {
 }
 
 
-//После передачи данных по post-методу...
+//РџРѕСЃР»Рµ РїРµСЂРµРґР°С‡Рё РґР°РЅРЅС‹С… РїРѕ post-РјРµС‚РѕРґСѓ...
  
 if (isset ($_POST['sent'])) {
 
-    //--------------Обработка флажков--начало--------------//
+    //--------------РћР±СЂР°Р±РѕС‚РєР° С„Р»Р°Р¶РєРѕРІ--РЅР°С‡Р°Р»Рѕ--------------//
 
 
     $current_icon = $_POST['name_icon'];
     $current_orig = $_POST['name_orig'];
 
-    //Выбраны обе флажки для удаления файлов изображений...
+    //Р’С‹Р±СЂР°РЅС‹ РѕР±Рµ С„Р»Р°Р¶РєРё РґР»СЏ СѓРґР°Р»РµРЅРёСЏ С„Р°Р№Р»РѕРІ РёР·РѕР±СЂР°Р¶РµРЅРёР№...
     if (isset ($_POST['del_icon']) && isset ($_POST['del_orig'])) {
 
         if (($_POST['del_icon'] == 1) && ($_POST['del_orig'] == 1)) {
 
-            //Удаление файла иконки и файла рисунка
+            //РЈРґР°Р»РµРЅРёРµ С„Р°Р№Р»Р° РёРєРѕРЅРєРё Рё С„Р°Р№Р»Р° СЂРёСЃСѓРЅРєР°
             @unlink ($current_icon);
             @unlink ($current_orig);
 
-            //Удаление имени файла иконки и рисунка из базы данных
+            //РЈРґР°Р»РµРЅРёРµ РёРјРµРЅРё С„Р°Р№Р»Р° РёРєРѕРЅРєРё Рё СЂРёСЃСѓРЅРєР° РёР· Р±Р°Р·С‹ РґР°РЅРЅС‹С…
             $query_del_filename = "UPDATE $datatable SET icon_name = 'ecomaps/eco_map_icons/empty.jpg', image_name = 'ecomaps/eco_map_images/empty.jpg', file_icon = 'empty.jpg', file_image = 'empty.jpg' WHERE id = '".$_POST['id']."'";
             $name_file_icon = 'empty';
             $name_file_orig = 'empty';
         }
         
-    //Выбран только флаг на удаление файла иконки 
+    //Р’С‹Р±СЂР°РЅ С‚РѕР»СЊРєРѕ С„Р»Р°Рі РЅР° СѓРґР°Р»РµРЅРёРµ С„Р°Р№Р»Р° РёРєРѕРЅРєРё 
     } elseif (isset ($_POST['del_icon']) && !isset ($_POST['del_orig'])) {
 
         if ($_POST['del_icon'] == 1) {
 
-            //Удаление файла иконки
+            //РЈРґР°Р»РµРЅРёРµ С„Р°Р№Р»Р° РёРєРѕРЅРєРё
             @unlink ($current_icon);
 
-            //Удаление имени файла иконки из базы данных
+            //РЈРґР°Р»РµРЅРёРµ РёРјРµРЅРё С„Р°Р№Р»Р° РёРєРѕРЅРєРё РёР· Р±Р°Р·С‹ РґР°РЅРЅС‹С…
             $query_del_filename = "UPDATE $datatable SET icon_name = 'ecomaps/eco_map_icons/empty.jpg', file_icon = 'empty.jpg' WHERE id = '".$_POST['id']."'";
             $name_file_icon = 'empty';
 
         }
 
-    //Выбран только флаг на удаление файла рисунка
+    //Р’С‹Р±СЂР°РЅ С‚РѕР»СЊРєРѕ С„Р»Р°Рі РЅР° СѓРґР°Р»РµРЅРёРµ С„Р°Р№Р»Р° СЂРёСЃСѓРЅРєР°
     } elseif (!isset ($_POST['del_icon']) && isset ($_POST['del_orig'])) {
 
         if ($_POST['del_orig'] == 1) {
 
-            //Удаление файла рисунка
+            //РЈРґР°Р»РµРЅРёРµ С„Р°Р№Р»Р° СЂРёСЃСѓРЅРєР°
             @unlink ($current_orig);
 
-            //Удаление имени файла рисунка из базы данных
+            //РЈРґР°Р»РµРЅРёРµ РёРјРµРЅРё С„Р°Р№Р»Р° СЂРёСЃСѓРЅРєР° РёР· Р±Р°Р·С‹ РґР°РЅРЅС‹С…
             $query_del_filename = "UPDATE $datatable SET image_name = 'ecomaps/eco_map_images/empty.jpg', file_image = 'empty.jpg' WHERE id = '".$_POST['id']."'";
             $name_file_orig = 'empty';
 
         }
     }
 
-    //Выполнение запроса в соответствии с выбранными флагами...
+    //Р’С‹РїРѕР»РЅРµРЅРёРµ Р·Р°РїСЂРѕСЃР° РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ РІС‹Р±СЂР°РЅРЅС‹РјРё С„Р»Р°РіР°РјРё...
     if (isset($query_del_filename)) {
         if ($query_del_filename != '') {
             @mysql_query ($query_del_filename, $link);
@@ -97,33 +97,33 @@ if (isset ($_POST['sent'])) {
         }
     }
 
-    //---------------Обработка флажков--конец-----------------//
+    //---------------РћР±СЂР°Р±РѕС‚РєР° С„Р»Р°Р¶РєРѕРІ--РєРѕРЅРµС†-----------------//
 
                 
-    //---------------Обработка загруженных файлов--начало-----//
+    //---------------РћР±СЂР°Р±РѕС‚РєР° Р·Р°РіСЂСѓР¶РµРЅРЅС‹С… С„Р°Р№Р»РѕРІ--РЅР°С‡Р°Р»Рѕ-----//
 
-    //--------------Если выбраны файлы иконки и рисунка для загрузки--------//
+    //--------------Р•СЃР»Рё РІС‹Р±СЂР°РЅС‹ С„Р°Р№Р»С‹ РёРєРѕРЅРєРё Рё СЂРёСЃСѓРЅРєР° РґР»СЏ Р·Р°РіСЂСѓР·РєРё--------//
     if (isset ($_POST['add_icon']) && isset ($_POST['add_orig'])) {
 
         if (($_POST['add_icon'] == 1) && ($_POST['add_orig'] == 1)) {
 
             if (!is_uploaded_file ($_FILES['icon']['tmp_name']) && !is_uploaded_file ($_FILES['image']['tmp_name'])) {
         
-               $file_info.= "Ошибка при загрузке файлов иконки и рисунка на сервер...\n"; 
+               $file_info.= "РћС€РёР±РєР° РїСЂРё Р·Р°РіСЂСѓР·РєРµ С„Р°Р№Р»РѕРІ РёРєРѕРЅРєРё Рё СЂРёСЃСѓРЅРєР° РЅР° СЃРµСЂРІРµСЂ...\n"; 
         
             } else {
 
                 if ($_FILES['icon']['size']>50000) {
-                    $errmsg.="<br />Файл с уменьшенным изображением превышает допустимый размер в 50 кбайт";
+                    $errmsg.="<br />Р¤Р°Р№Р» СЃ СѓРјРµРЅСЊС€РµРЅРЅС‹Рј РёР·РѕР±СЂР°Р¶РµРЅРёРµРј РїСЂРµРІС‹С€Р°РµС‚ РґРѕРїСѓСЃС‚РёРјС‹Р№ СЂР°Р·РјРµСЂ РІ 50 РєР±Р°Р№С‚";
                 }
                 if ($_FILES['image']['size']>300000) {
-                    $errmsg.="<br />Файл с изображением превышает допустимый размер в 300 кбайт";
+                    $errmsg.="<br />Р¤Р°Р№Р» СЃ РёР·РѕР±СЂР°Р¶РµРЅРёРµРј РїСЂРµРІС‹С€Р°РµС‚ РґРѕРїСѓСЃС‚РёРјС‹Р№ СЂР°Р·РјРµСЂ РІ 300 РєР±Р°Р№С‚";
                 }
                 if ($_FILES['icon']['type'] != 'image/pjpeg') {
-                    $errmsg.="<br />Файл с уменьшенным изображением имеет неразрешенный тип.<br />Допускается только тип jpeg<br />";
+                    $errmsg.="<br />Р¤Р°Р№Р» СЃ СѓРјРµРЅСЊС€РµРЅРЅС‹Рј РёР·РѕР±СЂР°Р¶РµРЅРёРµРј РёРјРµРµС‚ РЅРµСЂР°Р·СЂРµС€РµРЅРЅС‹Р№ С‚РёРї.<br />Р”РѕРїСѓСЃРєР°РµС‚СЃСЏ С‚РѕР»СЊРєРѕ С‚РёРї jpeg<br />";
                 }
                 if ($_FILES['image']['type'] != 'image/pjpeg') {
-                    $errmsg.="<br />Файл с изображением имеет неразрешенный тип.<br />Допускается только тип jpeg<br />";
+                    $errmsg.="<br />Р¤Р°Р№Р» СЃ РёР·РѕР±СЂР°Р¶РµРЅРёРµРј РёРјРµРµС‚ РЅРµСЂР°Р·СЂРµС€РµРЅРЅС‹Р№ С‚РёРї.<br />Р”РѕРїСѓСЃРєР°РµС‚СЃСЏ С‚РѕР»СЊРєРѕ С‚РёРї jpeg<br />";
                 }
         
 
@@ -134,7 +134,7 @@ if (isset ($_POST['sent'])) {
  
                     $im = save_image ($_FILES['image']);                   
                                       
-                    //Сохранение имен файлов иконки и рисунка...
+                    //РЎРѕС…СЂР°РЅРµРЅРёРµ РёРјРµРЅ С„Р°Р№Р»РѕРІ РёРєРѕРЅРєРё Рё СЂРёСЃСѓРЅРєР°...
                     $query_edit_filename = "UPDATE $datatable SET icon_name = '".$ic."', file_icon = '".$_POST['name_icon']."', image_name = '".$im."', file_image = '".$_POST['name_orig']."' WHERE id = '".$_POST['id']."'";
 
                 }
@@ -142,23 +142,23 @@ if (isset ($_POST['sent'])) {
 
         } 
 
-    //--------------Если выбран только файл иконки для загрузки--------//    
+    //--------------Р•СЃР»Рё РІС‹Р±СЂР°РЅ С‚РѕР»СЊРєРѕ С„Р°Р№Р» РёРєРѕРЅРєРё РґР»СЏ Р·Р°РіСЂСѓР·РєРё--------//    
     } elseif (isset ($_POST['add_icon']) && !isset ($_POST['add_orig'])) {
 
         if ($_POST['add_icon'] == 1) {
             
             if (!is_uploaded_file ($_FILES['icon']['tmp_name'])) {
         
-                $file_info.= "Ошибка при загрузке файла иконки на сервер...\n"; 
+                $file_info.= "РћС€РёР±РєР° РїСЂРё Р·Р°РіСЂСѓР·РєРµ С„Р°Р№Р»Р° РёРєРѕРЅРєРё РЅР° СЃРµСЂРІРµСЂ...\n"; 
         
             } else {
 
                 if ($_FILES['icon']['size']>50000) {
-                    $errmsg.="<br />Файл иконки превышает допустимый размер в 50 кбайт";
+                    $errmsg.="<br />Р¤Р°Р№Р» РёРєРѕРЅРєРё РїСЂРµРІС‹С€Р°РµС‚ РґРѕРїСѓСЃС‚РёРјС‹Р№ СЂР°Р·РјРµСЂ РІ 50 РєР±Р°Р№С‚";
                 }
             
                 if ($_FILES['icon']['type'] != 'image/pjpeg') {
-                    $errmsg.="<br />Файл иконки имеет неразрешенный тип.<br />Допускается только тип jpeg<br />";
+                    $errmsg.="<br />Р¤Р°Р№Р» РёРєРѕРЅРєРё РёРјРµРµС‚ РЅРµСЂР°Р·СЂРµС€РµРЅРЅС‹Р№ С‚РёРї.<br />Р”РѕРїСѓСЃРєР°РµС‚СЃСЏ С‚РѕР»СЊРєРѕ С‚РёРї jpeg<br />";
                 }
                     
 
@@ -167,7 +167,7 @@ if (isset ($_POST['sent'])) {
 
                     $ic = save_icon ($_FILES['icon']);
                     
-                    //Сохранение имени файла иконки...
+                    //РЎРѕС…СЂР°РЅРµРЅРёРµ РёРјРµРЅРё С„Р°Р№Р»Р° РёРєРѕРЅРєРё...
                     $query_edit_filename = "UPDATE $datatable SET icon_name = '".$ic."', file_icon = '".$_POST['name_icon']."' WHERE id = '".$_POST['id']."'";
 
                 }
@@ -175,23 +175,23 @@ if (isset ($_POST['sent'])) {
 
         }
 
-    //--------------Если выбран только файл рисукна для загрузки--------//    
+    //--------------Р•СЃР»Рё РІС‹Р±СЂР°РЅ С‚РѕР»СЊРєРѕ С„Р°Р№Р» СЂРёСЃСѓРєРЅР° РґР»СЏ Р·Р°РіСЂСѓР·РєРё--------//    
     } elseif (!isset ($_POST['add_icon']) && isset ($_POST['add_orig'])) {
 
         if ($_POST['add_orig'] == 1) {
             
             if (!is_uploaded_file ($_FILES['image']['tmp_name'])) {
         
-                $file_info.= "Ошибка при загрузке файла рисунка на сервер...\n"; 
+                $file_info.= "РћС€РёР±РєР° РїСЂРё Р·Р°РіСЂСѓР·РєРµ С„Р°Р№Р»Р° СЂРёСЃСѓРЅРєР° РЅР° СЃРµСЂРІРµСЂ...\n"; 
         
             } else {
 
                 if ($_FILES['image']['size']>3000000) {
-                    $errmsg.="<br />Файл рисунка превышает допустимый размер в 300 кбайт";
+                    $errmsg.="<br />Р¤Р°Р№Р» СЂРёСЃСѓРЅРєР° РїСЂРµРІС‹С€Р°РµС‚ РґРѕРїСѓСЃС‚РёРјС‹Р№ СЂР°Р·РјРµСЂ РІ 300 РєР±Р°Р№С‚";
                 }
             
                 if ($_FILES['image']['type'] != 'image/pjpeg') {
-                    $errmsg.="<br />Файл рисунка имеет неразрешенный тип.<br />Допускается только тип jpeg<br />";
+                    $errmsg.="<br />Р¤Р°Р№Р» СЂРёСЃСѓРЅРєР° РёРјРµРµС‚ РЅРµСЂР°Р·СЂРµС€РµРЅРЅС‹Р№ С‚РёРї.<br />Р”РѕРїСѓСЃРєР°РµС‚СЃСЏ С‚РѕР»СЊРєРѕ С‚РёРї jpeg<br />";
                 }
             
 
@@ -199,7 +199,7 @@ if (isset ($_POST['sent'])) {
 
                     $im = save_image ($_FILES['image']);
 
-                    //Сохранение имени файла рисунка...
+                    //РЎРѕС…СЂР°РЅРµРЅРёРµ РёРјРµРЅРё С„Р°Р№Р»Р° СЂРёСЃСѓРЅРєР°...
                     $query_edit_filename = "UPDATE $datatable SET image_name = '".$im."', file_image = '".$_POST['name_orig']."' WHERE id = '".$_POST['id']."'";
 
                 }
@@ -210,7 +210,7 @@ if (isset ($_POST['sent'])) {
 
     }
 
-    //---------Выполнение запроса в соответствии с выбранными файлами для загрузки---// 
+    //---------Р’С‹РїРѕР»РЅРµРЅРёРµ Р·Р°РїСЂРѕСЃР° РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ РІС‹Р±СЂР°РЅРЅС‹РјРё С„Р°Р№Р»Р°РјРё РґР»СЏ Р·Р°РіСЂСѓР·РєРё---// 
 
     if (isset($query_edit_filename)) {
         if ($query_edit_filename != '') {
@@ -220,33 +220,33 @@ if (isset ($_POST['sent'])) {
         }
     }
 
-    //---------------Обработка загруженных файлов--конец-----//
+    //---------------РћР±СЂР°Р±РѕС‚РєР° Р·Р°РіСЂСѓР¶РµРЅРЅС‹С… С„Р°Р№Р»РѕРІ--РєРѕРЅРµС†-----//
 
 
-    //Сохранение названия карты и ее описания в базе данных 
+    //РЎРѕС…СЂР°РЅРµРЅРёРµ РЅР°Р·РІР°РЅРёСЏ РєР°СЂС‚С‹ Рё РµРµ РѕРїРёСЃР°РЅРёСЏ РІ Р±Р°Р·Рµ РґР°РЅРЅС‹С… 
     $query_edit_info = "UPDATE $datatable SET name = '".$_POST['iname']."', komment = '".$_POST['komment']."', loaddate = now() WHERE id = '".$_POST['id']."'";
 
     @mysql_query ($query_edit_info, $link);
         
     
     
-    //Сообщить о результатах... 
+    //РЎРѕРѕР±С‰РёС‚СЊ Рѕ СЂРµР·СѓР»СЊС‚Р°С‚Р°С…... 
     if (isset($errmsg) && $errmsg!="") {
         echo "<h2><font color=\"red\">".$errmsg."</font></h2>";
     } else {
-        echo "<h2><font color=\"blue\">Информация успешно изменена</font></h2>";
+        echo "<h2><font color=\"blue\">РРЅС„РѕСЂРјР°С†РёСЏ СѓСЃРїРµС€РЅРѕ РёР·РјРµРЅРµРЅР°</font></h2>";
         
     }
 
     $current_name    = $_POST['iname'];
     $current_komment = $_POST['komment'];
 
-    //Удаление post-переменных...
+    //РЈРґР°Р»РµРЅРёРµ post-РїРµСЂРµРјРµРЅРЅС‹С…...
     unset ($_POST['sent']);
     unset ($_POST['iname']);
     unset ($_POST['komment']);
     
-    //Удаление file-переменных...
+    //РЈРґР°Р»РµРЅРёРµ file-РїРµСЂРµРјРµРЅРЅС‹С…...
     unset ($_FILES['icon']);
     unset ($_FILES['image']);
    
@@ -261,7 +261,7 @@ $file_info = '';
 ?>
 
 
-<h2>Изменение информации</h2>
+<h2>РР·РјРµРЅРµРЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё</h2>
 
 <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = "post" enctype = "multipart/form-data">
 <input type = "hidden" name = "sent" value = "1">
@@ -270,30 +270,30 @@ $file_info = '';
 <INPUT type = 'hidden' name = 'name_orig' value = "<?php echo $current_orig; ?>">
 
 <table width = "650" border = "0" cellspacing = "20" cellpading = "0">
-<tr><td width = "280" valign = "top">Краткое название карты:</td>
+<tr><td width = "280" valign = "top">РљСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ РєР°СЂС‚С‹:</td>
     <td><textarea name = "iname" rows = "2" cols = "30" value = ""><?php echo $current_name; ?></textarea></td>
 </tr>
-<tr><td valign = "top">Описание карты:</td>
+<tr><td valign = "top">РћРїРёСЃР°РЅРёРµ РєР°СЂС‚С‹:</td>
     <td width = "370"><textarea name = "komment" rows = "4" cols = "30" value = ""><?php echo $current_komment; ?></textarea></td>
 </tr>
-<tr><td valign = "top">Выберите иконку<BR />(JPEG, не более 50 Кб):</td>
+<tr><td valign = "top">Р’С‹Р±РµСЂРёС‚Рµ РёРєРѕРЅРєСѓ<BR />(JPEG, РЅРµ Р±РѕР»РµРµ 50 РљР±):</td>
     <td valign = "top">
-        <FONT size = '-1'>Файл иконки на сервере: <?php echo $name_file_icon; ?>&nbsp;<INPUT type = 'checkbox' name = 'del_icon' value = '1'>&nbsp;Удалить</FONT>
-        <BR /><BR /><input type = "file" name = "icon" size="30">&nbsp;<FONT size = '-1'><INPUT type = 'checkbox' name = 'add_icon' value = '1'>&nbsp;Загрузить</FONT>
+        <FONT size = '-1'>Р¤Р°Р№Р» РёРєРѕРЅРєРё РЅР° СЃРµСЂРІРµСЂРµ: <?php echo $name_file_icon; ?>&nbsp;<INPUT type = 'checkbox' name = 'del_icon' value = '1'>&nbsp;РЈРґР°Р»РёС‚СЊ</FONT>
+        <BR /><BR /><input type = "file" name = "icon" size="30">&nbsp;<FONT size = '-1'><INPUT type = 'checkbox' name = 'add_icon' value = '1'>&nbsp;Р—Р°РіСЂСѓР·РёС‚СЊ</FONT>
     </td>
 </tr>
-<tr><td valign = "top">Выберите изображение<BR />(JPEG, не более 300 Кб):</td>
+<tr><td valign = "top">Р’С‹Р±РµСЂРёС‚Рµ РёР·РѕР±СЂР°Р¶РµРЅРёРµ<BR />(JPEG, РЅРµ Р±РѕР»РµРµ 300 РљР±):</td>
     <td valign = "top">
-        <FONT size = '-1'>Файл изображения на сервере: <?php echo $name_file_orig; ?>&nbsp;<INPUT type = 'checkbox' name = 'del_orig' value = '1'>&nbsp;Удалить</FONT>
-        <BR /><BR /><input type = "file" name = "image" size = "30">&nbsp;<FONT size = '-1'><INPUT type = 'checkbox' name = 'add_orig' value = '1'>&nbsp;Загрузить</FONT>
+        <FONT size = '-1'>Р¤Р°Р№Р» РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РЅР° СЃРµСЂРІРµСЂРµ: <?php echo $name_file_orig; ?>&nbsp;<INPUT type = 'checkbox' name = 'del_orig' value = '1'>&nbsp;РЈРґР°Р»РёС‚СЊ</FONT>
+        <BR /><BR /><input type = "file" name = "image" size = "30">&nbsp;<FONT size = '-1'><INPUT type = 'checkbox' name = 'add_orig' value = '1'>&nbsp;Р—Р°РіСЂСѓР·РёС‚СЊ</FONT>
     </td>
 </tr>
-<tr><td colspan = "2" align = "center"><input type = "submit" value = "Сохранить">&nbsp;&nbsp;<input type = "reset" value = "Сбросить"></td>   
+<tr><td colspan = "2" align = "center"><input type = "submit" value = "РЎРѕС…СЂР°РЅРёС‚СЊ">&nbsp;&nbsp;<input type = "reset" value = "РЎР±СЂРѕСЃРёС‚СЊ"></td>   
 </tr>
 </table>
 </form>
 
-<FONT size="-1"><A href='eco_choice_region_sett.php'>Вернуться к списку регионов</A></FONT>
+<FONT size="-1"><A href='eco_choice_region_sett.php'>Р’РµСЂРЅСѓС‚СЊСЃСЏ Рє СЃРїРёСЃРєСѓ СЂРµРіРёРѕРЅРѕРІ</A></FONT>
 
 </body>
 </html>

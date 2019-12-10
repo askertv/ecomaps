@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Список экологических карт региона</title>
+<title>РЎРїРёСЃРѕРє СЌРєРѕР»РѕРіРёС‡РµСЃРєРёС… РєР°СЂС‚ СЂРµРіРёРѕРЅР°</title>
 <LINK rel = 'stylesheet' type = 'text/css' href= 'styles.css'>
 </head>
 <body>
@@ -42,6 +42,6 @@ $result_selected_region = mysql_query($query_selected_region, $link);
     }
     ?>
 </table>
-<BR /><BR /><FONT size='-1'><A href='eco_choice_region.php'>Вернуться к списку регионов</A></FONT>
+<BR /><BR /><FONT size='-1'><A href='eco_choice_region.php'>Р’РµСЂРЅСѓС‚СЊСЃСЏ Рє СЃРїРёСЃРєСѓ СЂРµРіРёРѕРЅРѕРІ</A></FONT>
 </body>
 </html>

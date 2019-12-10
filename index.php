@@ -1,14 +1,14 @@
 <?php
 
-$title = 'Экологические карты';
+$title = 'Р­РєРѕР»РѕРіРёС‡РµСЃРєРёРµ РєР°СЂС‚С‹';
 
 $content = '';
 
 $content.= "<BR /><BR /><BR /><BR />";
 
-$content.= "<A href = 'eco_choice_region.php' title = 'Экологические карты'>";
+$content.= "<A href = 'eco_choice_region.php' title = 'Р­РєРѕР»РѕРіРёС‡РµСЃРєРёРµ РєР°СЂС‚С‹'>";
 
-$content.= "Экологические карты";
+$content.= "Р­РєРѕР»РѕРіРёС‡РµСЃРєРёРµ РєР°СЂС‚С‹";
 
 $content.= "</A>";
 
@@ -26,7 +26,7 @@ echo $content;
 
 ?>
 
-<BR /><BR /><A href = '../../index.php'>Вернуться на главную страницу ELBRUS</A>
+<BR /><BR /><A href = '../../index.php'>Р’РµСЂРЅСѓС‚СЊСЃСЏ РЅР° РіР»Р°РІРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ ELBRUS</A>
 
 </BODY>
 </HTML>

@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])) {
 require 'ii.php';
 $regions='';
 $content='';
-$title='РЕДАКТИРОВАНИЕ -> РЕГИОНЫ';
+$title='Р Р•Р”РђРљРўРР РћР’РђРќРР• -> Р Р•Р“РРћРќР«';
 
 $query="SELECT region, region_id FROM $datatable2 ORDER BY region";
 
@@ -23,20 +23,20 @@ for($i=0; $i<count($res); $i++) {
     $regions.="<a href='eco_region_maps_sett.php?zone=".$res[$i]['region_id']."' taget='_blank'>";
     $regions.=$res[$i]['region'];    
     $regions.="</a></td><td>";
-    $regions.="<a href='eco_edit_zone_sett.php?zone=".$res[$i]['region_id']."'><img src='ecoicons/eco_edit.gif' border='0' title='Редактировать название региона'></a>&nbsp;";
-    $regions.="<a href='eco_del_zone_sett.php?zone=".$res[$i]['region_id']."'><img src='ecoicons/eco_del.gif' border='0' title='Удалить всю информацию о регионе'></a>";
+    $regions.="<a href='eco_edit_zone_sett.php?zone=".$res[$i]['region_id']."'><img src='ecoicons/eco_edit.gif' border='0' title='Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ РЅР°Р·РІР°РЅРёРµ СЂРµРіРёРѕРЅР°'></a>&nbsp;";
+    $regions.="<a href='eco_del_zone_sett.php?zone=".$res[$i]['region_id']."'><img src='ecoicons/eco_del.gif' border='0' title='РЈРґР°Р»РёС‚СЊ РІСЃСЋ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ СЂРµРіРёРѕРЅРµ'></a>";
     $regions.="</td></tr>";
 }
 
 $content="<html><head><title>".$title."</title><LINK rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\"></head><body>";
-$content.="<br><br><br><br><br><br><table border='0' width='600'><tr><td width='550'><b>Список регионов:</b></td>";
+$content.="<br><br><br><br><br><br><table border='0' width='600'><tr><td width='550'><b>РЎРїРёСЃРѕРє СЂРµРіРёРѕРЅРѕРІ:</b></td>";
 $content.="<td width='50'><a href='eco_add_zone_sett.php'>";
-$content.="<img src='ecoicons/eco_add.gif' border='0' title='Добавить новый регион'></a>&nbsp;";
+$content.="<img src='ecoicons/eco_add.gif' border='0' title='Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІС‹Р№ СЂРµРіРёРѕРЅ'></a>&nbsp;";
 $content.="<a href='eco_add_info.php'>";
-$content.="<img src='ecoicons/eco_add_ipp.gif' border='0' title='Добавить информацию в регион'></a>";
+$content.="<img src='ecoicons/eco_add_ipp.gif' border='0' title='Р”РѕР±Р°РІРёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ РІ СЂРµРіРёРѕРЅ'></a>";
 $content.="</td></tr>";
 $content.=$regions;
-$content.="</table><BR /><A href='../index.php'>Выход из админ режима</A></body></html>";
+$content.="</table><BR /><A href='../index.php'>Р’С‹С…РѕРґ РёР· Р°РґРјРёРЅ СЂРµР¶РёРјР°</A></body></html>";
 
 echo $content;
 

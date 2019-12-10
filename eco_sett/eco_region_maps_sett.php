@@ -1,6 +1,6 @@
 <HTML>
 <HEAD>
-<TITLE>Список экологических карт региона</TITLE>
+<TITLE>РЎРїРёСЃРѕРє СЌРєРѕР»РѕРіРёС‡РµСЃРєРёС… РєР°СЂС‚ СЂРµРіРёРѕРЅР°</TITLE>
 <LINK rel = 'stylesheet' type = 'text/css' href= 'styles.css'>
 </HEAD>
 <BODY>
@@ -17,7 +17,7 @@ $result_selected_region = mysql_query($query_selected_region, $link);
 <TABLE border='0' width='600'>
   <TR>
     <TD width='450' valign = 'top'><B><?php echo mysql_result($result_selected_region, 0); ?></B>&nbsp;
-        <A href='eco_add_info_sett.php?region=<?php echo $_GET['zone']; ?>'><img src='ecoicons/eco_add_ipp.gif' border='0' title='Добавить информацию в текущий регион'></A>  
+        <A href='eco_add_info_sett.php?region=<?php echo $_GET['zone']; ?>'><img src='ecoicons/eco_add_ipp.gif' border='0' title='Р”РѕР±Р°РІРёС‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ РІ С‚РµРєСѓС‰РёР№ СЂРµРіРёРѕРЅ'></A>  
     </TD>
     <TD width='150'>
         &nbsp;    
@@ -35,8 +35,8 @@ $result_selected_region = mysql_query($query_selected_region, $link);
 
     for($i=0; $i<count($list_maps); $i++) {
         echo "<tr><td valign='top'>";
-        echo "<a href='eco_edit_info_self_sett.php?field_id=".$list_maps[$i]['id']."'><img src='ecoicons/eco_edit.gif' border='0' title='Редактировать запись'></a>&nbsp;";
-        echo "<a href='eco_del_info_sett.php?field_id=".$list_maps[$i]['id']."'><img src='ecoicons/eco_del.gif' border='0' title='Удалить запись'></a>";     
+        echo "<a href='eco_edit_info_self_sett.php?field_id=".$list_maps[$i]['id']."'><img src='ecoicons/eco_edit.gif' border='0' title='Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ Р·Р°РїРёСЃСЊ'></a>&nbsp;";
+        echo "<a href='eco_del_info_sett.php?field_id=".$list_maps[$i]['id']."'><img src='ecoicons/eco_del.gif' border='0' title='РЈРґР°Р»РёС‚СЊ Р·Р°РїРёСЃСЊ'></a>";     
         echo "<a href='".$list_maps[$i]['image_name']."' target='_blank'><br />";
         echo $list_maps[$i]['name'];
         echo "</a><br />";
@@ -48,6 +48,6 @@ $result_selected_region = mysql_query($query_selected_region, $link);
     ?>
 </TABLE>
 <BR />
-<FONT size="-1"><A href='eco_choice_region_sett.php'>Вернуться к списку регионов</A></FONT>
+<FONT size="-1"><A href='eco_choice_region_sett.php'>Р’РµСЂРЅСѓС‚СЊСЃСЏ Рє СЃРїРёСЃРєСѓ СЂРµРіРёРѕРЅРѕРІ</A></FONT>
 </BODY>
 </HTML>

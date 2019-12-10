@@ -4,12 +4,12 @@ require_once 'ii.php';
 
 $errmsg = "";
 
-//Удаление информации... 
+//РЈРґР°Р»РµРЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё... 
 if (isset($_GET['id'])) {
 
 
 
-    //Выборка названий файлов для удаления
+    //Р’С‹Р±РѕСЂРєР° РЅР°Р·РІР°РЅРёР№ С„Р°Р№Р»РѕРІ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ
     $query_files_names = "SELECT icon_name, image_name FROM $datatable WHERE id = '".$_GET['id']."'";
 
     $result_files_names = @mysql_query ($query_files_names, $link);
@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
         $files_names[$i] = mysql_fetch_array ($result_files_names);
     }
     
-    //Удаление файлов
+    //РЈРґР°Р»РµРЅРёРµ С„Р°Р№Р»РѕРІ
     for ($i = 0; $i < count ($files_names); $i++) {
         @unlink ($files_names[$i]['icon_name']);
         @unlink ($files_names[$i]['image_name']);
@@ -26,22 +26,22 @@ if (isset($_GET['id'])) {
 
 
 
-    //Удаление записи из базы данных        
+    //РЈРґР°Р»РµРЅРёРµ Р·Р°РїРёСЃРё РёР· Р±Р°Р·С‹ РґР°РЅРЅС‹С…        
     $query_del_info = "DELETE FROM $datatable WHERE id = '".$_GET['id']."'";
 
     if (!mysql_query ($query_del_info, $link)) {
-        $errmsg.="<br />Попытка удаления записи из базе данных привела к ошибке. Пожалуйста, повторите...<br />";
+        $errmsg.="<br />РџРѕРїС‹С‚РєР° СѓРґР°Р»РµРЅРёСЏ Р·Р°РїРёСЃРё РёР· Р±Р°Р·Рµ РґР°РЅРЅС‹С… РїСЂРёРІРµР»Р° Рє РѕС€РёР±РєРµ. РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РїРѕРІС‚РѕСЂРёС‚Рµ...<br />";
     }
             
         
     if ($errmsg != "") {
         echo "<h2><font color=\"red\">".$errmsg."</font></h2>";
     } else {
-        echo "<h2><font color=\"blue\">Информация успешно удалена</font></h2>";
+        echo "<h2><font color=\"blue\">РРЅС„РѕСЂРјР°С†РёСЏ СѓСЃРїРµС€РЅРѕ СѓРґР°Р»РµРЅР°</font></h2>";
         unset($_GET['id']);
     }
     
-    echo "<BR /><A href = 'eco_choice_region_sett.php' title = 'Вернуться к списку регионов'>Вернуться к списку регионов</A>";
+    echo "<BR /><A href = 'eco_choice_region_sett.php' title = 'Р’РµСЂРЅСѓС‚СЊСЃСЏ Рє СЃРїРёСЃРєСѓ СЂРµРіРёРѕРЅРѕРІ'>Р’РµСЂРЅСѓС‚СЊСЃСЏ Рє СЃРїРёСЃРєСѓ СЂРµРіРёРѕРЅРѕРІ</A>";
 }
 
 ?>

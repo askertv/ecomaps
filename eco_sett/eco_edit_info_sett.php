@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Изменение информации записи</title>
+<title>РР·РјРµРЅРµРЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё Р·Р°РїРёСЃРё</title>
 </head>
 <body>
 <br /><br /><br /><br />
@@ -15,31 +15,31 @@ $regions_info       = mysql_fetch_array ($result_choose_info);
 
 ?>
 
-<h2>Изменение информации</h2>
+<h2>РР·РјРµРЅРµРЅРёРµ РёРЅС„РѕСЂРјР°С†РёРё</h2>
 
 <form action = "eco_action_edit_info.php" method = "post" enctype = "multipart/form-data">
 <input type = "hidden" name = "sent" value = "1">
 <input type = 'hidden' name = 'id' value = "<?php echo $_GET['field_id']; ?>">
 <input type = 'hidden' name = 'zone_id' value = "<?php echo $_GET['field_id']; ?>">
 <table width = "600" border = "0" cellspacing = "0" cellpading = "0">
-<tr><td width = "280" valign = "top">Краткое название карты:</td>
+<tr><td width = "280" valign = "top">РљСЂР°С‚РєРѕРµ РЅР°Р·РІР°РЅРёРµ РєР°СЂС‚С‹:</td>
     <td><textarea name = "iname" rows = "2" cols = "30" value = ""><?php echo $regions_info['name']; ?></textarea></td>
 </tr>
-<tr><td valign = "top">Описание карты:</td>
+<tr><td valign = "top">РћРїРёСЃР°РЅРёРµ РєР°СЂС‚С‹:</td>
     <td width = "320"><textarea name = "komment" rows = "4" cols = "30" value = ""><?php echo $regions_info['komment']; ?></textarea></td>
 </tr>
-<tr><td valign = "top">Выберите уменьшенное изображение, иконку (JPEG, не более 50 Кб)</td>
+<tr><td valign = "top">Р’С‹Р±РµСЂРёС‚Рµ СѓРјРµРЅСЊС€РµРЅРЅРѕРµ РёР·РѕР±СЂР°Р¶РµРЅРёРµ, РёРєРѕРЅРєСѓ (JPEG, РЅРµ Р±РѕР»РµРµ 50 РљР±)</td>
     <td valign = "top"><input type = "file" name = "icon" size="30"></td>
 </tr>
-<tr><td valign = "top">Выберите изображение в оригинальном размере (JPEG, не более 300 Кб)</td>
+<tr><td valign = "top">Р’С‹Р±РµСЂРёС‚Рµ РёР·РѕР±СЂР°Р¶РµРЅРёРµ РІ РѕСЂРёРіРёРЅР°Р»СЊРЅРѕРј СЂР°Р·РјРµСЂРµ (JPEG, РЅРµ Р±РѕР»РµРµ 300 РљР±)</td>
     <td valign = "top"><input type = "file" name = "image" size = "30"></td>
 </tr>
-<tr><td colspan = "2" align = "center"><input type = "submit" value = "Сохранить">&nbsp;&nbsp;<input type = "reset" value = "Сбросить"></td>   
+<tr><td colspan = "2" align = "center"><input type = "submit" value = "РЎРѕС…СЂР°РЅРёС‚СЊ">&nbsp;&nbsp;<input type = "reset" value = "РЎР±СЂРѕСЃРёС‚СЊ"></td>   
 </tr>
 </table>
 </form>
 
-<FONT size="-1"><A href='eco_choice_region_sett.php'>Вернуться к списку регионов</A></FONT>
+<FONT size="-1"><A href='eco_choice_region_sett.php'>Р’РµСЂРЅСѓС‚СЊСЃСЏ Рє СЃРїРёСЃРєСѓ СЂРµРіРёРѕРЅРѕРІ</A></FONT>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 require 'ii.php';
 $regions='';
 $content='';
-$title='Выбор региона для отображения экологической карты';
+$title='Р’С‹Р±РѕСЂ СЂРµРіРёРѕРЅР° РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ СЌРєРѕР»РѕРіРёС‡РµСЃРєРѕР№ РєР°СЂС‚С‹';
 
 $query="SELECT region, region_id FROM $datatable2 ORDER BY region";
 
@@ -20,7 +20,7 @@ for($i=0; $i<count($res); $i++) {
 }
 
 $content="<html><head><title>".$title."</title></head><body>";
-$content.="<table border='1' width='400'><tr><td><b>Выберите регион:</b></td></tr><tr><td>";
+$content.="<table border='1' width='400'><tr><td><b>Р’С‹Р±РµСЂРёС‚Рµ СЂРµРіРёРѕРЅ:</b></td></tr><tr><td>";
 $content.=$regions;
 $content.="</td></tr></table></body></html>";
 
